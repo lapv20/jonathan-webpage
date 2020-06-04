@@ -11,3 +11,12 @@ export const environment = {
     measurementId: 'G-YB47LS8HZJ'
   }
 };
+
+export const COLLECTIONS = {
+  contacts: 'contactos'
+};
+
+export const ADMIN_CREDENTIALS = {
+  email: 'test@test.com',
+  password: '12345678'
+};

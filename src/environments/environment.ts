@@ -16,6 +16,15 @@ export const environment = {
   }
 };
 
+export const COLLECTIONS = {
+  contacts: 'contactos'
+};
+
+export const ADMIN_CREDENTIALS = {
+  email: 'test@test.com',
+  password: '12345678'
+};
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
