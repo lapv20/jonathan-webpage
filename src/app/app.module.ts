@@ -17,11 +17,13 @@ import { environment } from '../environments/environment';
 import { DatabaseService } from '@services/database/database.service';
 import { UserService } from '@services/user/user.service';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
