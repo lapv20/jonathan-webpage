@@ -13,7 +13,7 @@ const appRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  },
+  }
 ];
 
 @NgModule({

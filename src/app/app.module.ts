@@ -18,12 +18,15 @@ import { DatabaseService } from '@services/database/database.service';
 import { UserService } from '@services/user/user.service';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { VentasComponent } from './modules/administration/pages/ventas/ventas.component';
+import { AdministrationModule } from '@admin-module/administration.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    VentasComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { HomeComponent } from './home/home.component';
     AngularFireAuthModule,
     AppRoutingModule,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireStorageModule // imports firebase/storage only needed for storage features
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    AdministrationModule,
   ],
   providers: [
     DatabaseService,

@@ -6,6 +6,7 @@
       "@services/*": ["src/app/services/*"],
       "@interfaces/*": ["src/app/interfaces/*"],
       "@env/*": ["src/environments/*"],
+      "@admin-module/*": ["src/app/modules/administration/*"],
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
