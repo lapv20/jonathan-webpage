@@ -17,7 +17,6 @@ import { environment } from '../environments/environment';
 import { DatabaseService } from '@services/database/database.service';
 import { UserService } from '@services/user/user.service';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
 import { VentasComponent } from './modules/administration/pages/ventas/ventas.component';
 import { AdministrationModule } from '@admin-module/administration.module';
 
@@ -25,7 +24,6 @@ import { AdministrationModule } from '@admin-module/administration.module';
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
     VentasComponent
   ],
   imports: [

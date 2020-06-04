@@ -14,14 +14,12 @@ export class NavigationComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   logout() {
     // call the logout method in user service
     this.userService.logout();
-    // do the redirection to home
+    // do the redirection to login
     this.router.navigate(['/']);
   }
-
 }

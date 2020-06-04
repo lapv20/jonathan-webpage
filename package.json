@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~8.2.5",
     "@angular/platform-browser-dynamic": "~8.2.5",
     "@angular/router": "~8.2.5",
+    "@fortawesome/fontawesome-free": "^5.13.0",
     "angularfire2": "^5.4.2",
     "bootstrap": "^4.5.0",
     "firebase": "^7.14.6",

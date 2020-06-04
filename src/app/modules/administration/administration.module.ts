@@ -7,7 +7,11 @@ import { AdministrationRoutingModule } from './administration-routing.module';
 import { AdministrationComponent } from './administration.component';
 import { MainComponent } from './pages/main/main.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { SideMenuComponent } from './components/side-menu/side-menu.component';
+import { InfoHeaderComponent } from './components/info-header/info-header.component';
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { ClientesComponent } from './pages/clientes/clientes.component';
+import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
+import { ProductosComponent } from './pages/productos/productos.component';
 
 @NgModule({
   imports: [
@@ -21,7 +25,11 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
     AdministrationComponent,
     MainComponent,
     NavigationComponent,
-    SideMenuComponent,
+    InfoHeaderComponent,
+    UsuariosComponent,
+    ClientesComponent,
+    ProveedoresComponent,
+    ProductosComponent,
   ],
 })
 export class AdministrationModule { }

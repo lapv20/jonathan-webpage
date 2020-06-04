@@ -1,19 +1,12 @@
-<b>Base Admin Template</b><br>
-<i>Component visibles to all Admin views should be here</i><br>
-
+<app-info-header></app-info-header>
 <app-admin-navigation></app-admin-navigation>
 
 <div class="container-fluid">
     <div class="row">
 
-        <main role="main" class="col px-4">
+        <main role="main" class="col p-0">
             <router-outlet></router-outlet>
         </main>
 
     </div>
 </div>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-<script src="dashboard.js"></script>
