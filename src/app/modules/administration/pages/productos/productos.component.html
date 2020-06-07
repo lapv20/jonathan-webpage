@@ -1,1 +1,34 @@
-<p>productos works!</p>
+<div class="container">
+    <div class="py-2 mt-4 text-left text-white">
+        <h2><i class="fa fa-boxes"></i> Lista de Productos</h2>
+        <hr class="bg-white" class="mb-4">
+    </div>
+
+    <table class="table bg-light">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Proveedor</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of allProductos; index as i ">
+                <th scope="row">{{ i+1 }}</th>
+                <td>{{ producto.proveedor_name }}</td>
+                <td>{{ producto.producto }}</td>
+                <td>{{ producto.precio | currency }}</td>
+                <td>{{ producto.cantidad | number }}</td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-dark mr-2"
+                        [routerLink]="['../editar-producto/', producto.key]"><i class="fa fa-edit"></i> Editar</button>
+                    <button type="button" class="btn btn-sm btn-dark" (click)="deleteProducto(producto)"><i
+                            class="fa fa-trash"></i> Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

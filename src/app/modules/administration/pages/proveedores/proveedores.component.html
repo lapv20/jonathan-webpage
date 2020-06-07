@@ -1,1 +1,32 @@
-<p>proveedores works!</p>
+<div class="container">
+    <div class="py-2 mt-4 text-left text-white">
+        <h2><i class="fa fa-truck"></i> Lista de Proveedores</h2>
+        <hr class="bg-white" class="mb-4">
+    </div>
+
+    <table class="table bg-light">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Proveedor</th>
+                <th scope="col">Contacto</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Dirección</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let proveedor of allProveedor; index as i ">
+                <th scope="row">{{ i+1 }}</th>
+                <td>{{ proveedor.proveedor }}</td>
+                <td>{{ proveedor.contacto }}</td>
+                <td>{{ proveedor.telephone }}</td>
+                <td>{{ proveedor.address }}</td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-dark mr-2" [routerLink]="['../editar-proveedor/', proveedor.key]" ><i class="fa fa-edit"></i> Editar</button>
+                    <button type="button" class="btn btn-sm btn-dark" (click)="deleteProveedor(proveedor)"><i class="fa fa-trash"></i> Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
