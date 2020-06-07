@@ -12,6 +12,11 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
 import { ProductosComponent } from './pages/productos/productos.component';
+import { NewClientComponent } from './pages/clientes/new-client/new-client.component';
+import { NewUserComponent } from './pages/usuarios/new-user/new-user.component';
+import { NewProveedorComponent } from './pages/proveedores/new-proveedor/new-proveedor.component';
+import { NewProductoComponent } from './pages/productos/new-producto/new-producto.component';
+import { NewVentaComponent } from './pages/ventas/new-venta/new-venta.component';
 
 @NgModule({
   imports: [
@@ -30,6 +35,11 @@ import { ProductosComponent } from './pages/productos/productos.component';
     ClientesComponent,
     ProveedoresComponent,
     ProductosComponent,
+    NewClientComponent,
+    NewUserComponent,
+    NewProveedorComponent,
+    NewProductoComponent,
+    NewVentaComponent,
   ],
 })
 export class AdministrationModule { }
