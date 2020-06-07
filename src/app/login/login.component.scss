@@ -42,3 +42,14 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.login-form {
+  width: 50%;
+  height: fit-content;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
