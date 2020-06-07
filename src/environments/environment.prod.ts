@@ -13,7 +13,12 @@ export const environment = {
 };
 
 export const COLLECTIONS = {
-  contacts: 'contactos'
+  contactos: 'contactos',
+  usuarios: 'usuarios',
+  clientes: 'clientes',
+  proveedor: 'proveedor',
+  productos: 'productos',
+  ventas: 'ventas',
 };
 
 export const ADMIN_CREDENTIALS = {
