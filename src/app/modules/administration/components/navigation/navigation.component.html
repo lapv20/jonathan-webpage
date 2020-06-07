@@ -13,7 +13,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false"><i class="fa fa-user"></i> Usuarios</a>
                 <div class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
-                    <a class="dropdown-item text-white" href="#"><i class="fa fa-user-plus"></i> Nuevo Usuario</a>
+                    <a class="dropdown-item text-white" routerLinkActive="active" [routerLink]="['nuevo-usuario']"><i class="fa fa-user-plus"></i> Nuevo Usuario</a>
                     <a class="dropdown-item text-white" routerLinkActive="active" [routerLink]="['usuarios']"><i class="fa fa-th-list"></i> Lista de Usuarios</a>
                 </div>
             </li>
@@ -22,7 +22,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false"><i class="fa fa-users"></i> Clientes</a>
                 <div class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
-                    <a class="dropdown-item text-white" href="#"><i class="fa fa-user-plus"></i> Nuevo Cliente</a>
+                    <a class="dropdown-item text-white" routerLinkActive="active" [routerLink]="['nuevo-cliente']"><i class="fa fa-user-plus"></i> Nuevo Cliente</a>
                     <a class="dropdown-item text-white" routerLinkActive="active" [routerLink]="['clientes']"><i class="fa fa-th-list"></i> Lista de Clientes</a>
                 </div>
             </li>
@@ -31,7 +31,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false"><i class="fa fa-truck"></i> Proveedores</a>
                 <div class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
-                    <a class="dropdown-item text-white" href="#"><i class="fa fa-user-plus"></i> Nuevo Proveedor</a>
+                    <a class="dropdown-item text-white" routerLinkActive="active" [routerLink]="['nuevo-proveedor']"><i class="fa fa-user-plus"></i> Nuevo Proveedor</a>
                     <a class="dropdown-item text-white" routerLinkActive="active" [routerLink]="['proveedores']"><i class="fa fa-th-list"></i> Lista de Proveedores</a>
                 </div>
             </li>
@@ -40,7 +40,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false"><i class="fa fa-boxes"></i> Productos</a>
                 <div class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
-                    <a class="dropdown-item text-white" href="#"><i class="fa fa-box-open"></i> Nuevo Producto</a>
+                    <a class="dropdown-item text-white" routerLinkActive="active" [routerLink]="['nuevo-producto']"><i class="fa fa-box-open"></i> Nuevo Producto</a>
                     <a class="dropdown-item text-white" routerLinkActive="active" [routerLink]="['productos']"><i class="fa fa-th-list"></i> Lista de Productos</a>
                 </div>
             </li>
@@ -49,7 +49,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false"><i class="fa fa-cash-register"></i> Ventas</a>
                 <div class="dropdown-menu bg-dark" aria-labelledby="dropdown01">
-                    <a class="dropdown-item text-white" href="#"><i class="fa fa-cart-plus"></i> Nuevo Venta</a>
+                    <a class="dropdown-item text-white" routerLinkActive="active" [routerLink]="['nueva-venta']"><i class="fa fa-cart-plus"></i> Nueva Venta</a>
                     <a class="dropdown-item text-white" routerLinkActive="active" [routerLink]="['ventas']"><i class="fa fa-th-list"></i> Ventas</a>
                 </div>
             </li>
