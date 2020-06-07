@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="py-2 mt-4 text-center text-white">
+        <h2><i class="fa fa-box-open"></i> {{ title }}</h2>
+        <hr class="bg-white" class="mb-4">
+    </div>
+
+    <div class="row form-container px-2 py-4 rounded">
+        <div class="col-md">
+            <div *ngIf="newProductoForm.pristine && newProductoForm.invalid" class="alert alert-danger" role="alert">
+                Todos los campos son obligatorios
+            </div>
+
+            <form class="needs-validation" [formGroup]="newProductoForm" (submit)="saveForm()" novalidate="">
+                <div class="mb-3">
+                    <label for="proveedor">Proveedor</label>
+                    <select formControlName="proveedor" class="custom-select">
+                        <option *ngFor="let proveedor of proveedoresList" value="{{proveedor.key}}">
+                            {{proveedor.proveedor}}</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="producto">Producto</label>
+                    <input formControlName="producto" type="text" class="form-control" id="producto" placeholder=""
+                        value="" required="">
+                    <div class="invalid-feedback">
+                        Valid first name is required.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="precio">Precio</label>
+                    <input formControlName="precio" type="text" class="form-control" id="precio" placeholder="" value=""
+                        required="">
+                    <div class="invalid-feedback">
+                        Valid first name is required.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cantidad">Cantidad</label>
+                    <input formControlName="cantidad" type="text" class="form-control" id="cantidad" placeholder=""
+                        value="" required="">
+                    <div class="invalid-feedback">
+                        Valid first name is required.
+                    </div>
+                </div>
+
+                <hr class="mb-4">
+                <button class="btn btn-dark btn-lg btn-block" type="submit">{{ btnString }}</button>
+            </form>
+        </div>
+    </div>
+</div>

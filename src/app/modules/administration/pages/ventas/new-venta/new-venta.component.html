@@ -1,0 +1,140 @@
+<div class="container">
+    <div class="py-2 mt-4 text-left text-white">
+        <h2><i class="fa fa-cash-register"></i> {{ title }}</h2>
+        <hr class="bg-white" class="mb-1">
+    </div>
+
+    <div class="row form-container px-2 py-2 rounded">
+        <div class="col-md">
+            <div *ngIf="ventaForm.pristine && ventaForm.invalid" class="alert alert-danger" role="alert">
+                Todos los campos son obligatorios
+            </div>
+
+            <form class="needs-validation" [formGroup]="ventaForm" (submit)="procesarVenta()" novalidate="">
+                <h4 class="text-white">Datos del Cliente</h4>
+                <div class="row">
+                    <div class="col">
+                        <label for="nit">NIT</label>
+                        <input formControlName="nit" type="text" class="form-control" id="nit" placeholder="" value=""
+                            required="">
+                    </div>
+
+                    <div class="col">
+                        <label for="first_name">Nombre</label>
+                        <input formControlName="first_name" type="text" class="form-control" id="first_name" placeholder=""
+                            value="" required="">
+                    </div>
+
+                    <div class="col">
+                        <label for="telephone">Telefono</label>
+                        <input formControlName="telephone" type="text" class="form-control" id="telephone" placeholder=""
+                            value="" required="">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="address">Dirección</label>
+                        <input formControlName="address" type="text" class="form-control" id="address"
+                            placeholder="" value="" required="">
+                    </div>
+                </div>
+
+                <h4 class="mt-3 text-white">Datos de Venta</h4>
+                <div class="card">
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <h5 class="card-title">Vendedor</h5>
+                                <p class="card-text">Adrian Cortes Orrego</p>
+                            </div>
+                            <div class="col-4 text-right">
+                                <h5 class="card-title">Acciones</h5>
+                                <button (click)="anularVenta()" type="button" class="btn btn-primary mr-2">Anular</button>
+                                <button class="btn btn-primary" type="submit">Procesar</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+
+            <!-- Tabla para añadir elementos a la venta -->
+            <table class="table bg-light mt-2">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Existencia</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Precio Total</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <input class="form-control" type="text" placeholder="Escribe un codigo" [value]="productoToAdd.key"
+                                (keyup.enter)="triggerFilter($event)">
+                        </th>
+                        <td>{{ productoToAdd.descripcion }}</td>
+                        <td>{{ productoToAdd.existencia | number }}</td>
+                        <td><input class="form-control" type="number" [(ngModel)]="productoToAdd.cantidad"></td>
+                        <td>{{ productoToAdd.precio | currency }}</td>
+                        <td>{{ productoToAdd.cantidad * productoToAdd.precio | currency }}</td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-dark mr-2" (click)="addProductToList()"><i
+                                    class="fa fa-plus"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Tabla donde se ven los elementos añadidos en la venta -->
+            <table class="table bg-dark mt-2">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Precio Total</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody class="text-white">
+                    <tr *ngIf="items.length == 0">
+                        <td colspan="6" class="text-center">
+                            Aun no ha agregado productos a la venta
+                        </td>
+                    </tr>
+                    <tr *ngFor="let item of items; index as i">
+                        <th scope="row">{{item.key}}</th>
+                        <td>{{item.descripcion}}</td>
+                        <td>{{item.cantidad}}</td>
+                        <td>{{item.precio | currency}}</td>
+                        <td>{{(item.cantidad * item.precio)|currency}}</td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-dark" (click)="removeItem(i)"><i
+                                    class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="bg-info">
+                        <td colspan="4" class="text-right">SUBTOTAL</td>
+                        <td colspan="2">{{ totalItems | currency }}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-right">IVA({{ ivaValue }}%)</td>
+                        <td colspan="2">{{ totalItemsIva | currency }}</td>
+                    </tr>
+                    <tr class="bg-info">
+                        <td colspan="4" class="text-right">TOTAL</td>
+                        <td colspan="2">{{ totalItems + totalItemsIva | currency }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

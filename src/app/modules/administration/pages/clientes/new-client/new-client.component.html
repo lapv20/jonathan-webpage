@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="py-2 mt-4 text-center text-white">
+        <h2><i class="fa fa-user-plus"></i> {{ title }}</h2>
+        <hr class="bg-white" class="mb-4">
+    </div>
+
+    <div class="row form-container px-2 py-4 rounded">
+        <div class="col-md">
+            <div *ngIf="newClienteForm.pristine && newClienteForm.invalid" class="alert alert-danger" role="alert">
+                Todos los campos son obligatorios
+            </div>
+
+            <form class="needs-validation" [formGroup]="newClienteForm" (submit)="saveForm()" novalidate="">
+                <div class="mb-3">
+                    <label for="nit">NIT</label>
+                    <input formControlName="nit" type="text" class="form-control" id="nit" placeholder=""
+                        value="" required="">
+                    <div class="invalid-feedback">
+                        Valid first name is required.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="first_name">Nombre</label>
+                    <input formControlName="first_name" type="text" class="form-control" id="first_name" placeholder=""
+                        value="" required="">
+                    <div class="invalid-feedback">
+                        Valid first name is required.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="telephone">Telefono</label>
+                    <input formControlName="telephone" type="text" class="form-control" id="telephone" placeholder=""
+                        value="" required="">
+                    <div class="invalid-feedback">
+                        Valid first name is required.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address">Dirección</label>
+                    <input formControlName="address" type="text" class="form-control" id="address" placeholder=""
+                        value="" required="">
+                    <div class="invalid-feedback">
+                        Valid first name is required.
+                    </div>
+                </div>
+
+                <hr class="mb-4">
+                <button class="btn btn-dark btn-lg btn-block" type="submit">{{ btnString }}</button>
+            </form>
+        </div>
+    </div>
+</div>
